@@ -1,4 +1,4 @@
 class Recipe < ApplicationRecord
-  # has_many :recipe_images
-  # belongs_to :users
+  # has_many :recipe_image
+  # belongs_to :user
 end

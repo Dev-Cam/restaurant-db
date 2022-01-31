@@ -1,0 +1,13 @@
+<h1>The complete collection</h1>
+
+<%= link_to 'Add Recipe', new_recipe_path %>
+<div class="index_recipes">
+<ul>
+<% @recipes.each do |r|%>
+  <li>
+    <%= link_to r.name, recipe_path(r.id) %>
+    <br>
+  </li>
+<% end %>
+</ul>
+</div>

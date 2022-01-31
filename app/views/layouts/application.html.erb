@@ -10,6 +10,26 @@
   </head>
 
   <body>
-    <%= yield %>
+  <div class="wrapper">
+  <h2>The Restaurant db </h2>
+    <nav>
+      
+      <div class="links">
+        <%= link_to 'Home', root_path %> 
+        |
+        <%= link_to 'All Recipes', recipes_path %> 
+        |
+        <%= link_to 'Login', '/does not exist yet' %>
+        |
+        <%= link_to 'Sign Up', '/does not exist yet' %>
+      </div>
+      
+    </nav>
+    <div class="content">
+      <%= yield %>
+    </div>
+      
+  </div>
+    
   </body>
 </html>

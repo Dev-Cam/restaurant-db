@@ -5,19 +5,25 @@ User.destroy_all
 u1 = User.create!(
   name: "Bob",
   image: "http://fillmurray.com/200/200",
-  bio: "bob make food, bob good cook, bob bob bob"
+  bio: "bob make food, bob good cook, bob bob bob",
+  email: 'bob@mail.com',
+  password: 'chicken'
 )
 
 u2 = User.create!(
   name: "Cam",
   image: "http://fillmurray.com/200/200",
-  bio: "Stuff about food and things"
+  bio: "Stuff about food and things",
+  email: 'cam@mail.com',
+  password: 'chicken'
 )
 
 u3 = User.create!(
   name: "Jess",
   image: "http://placekitten.com/200/200",
-  bio: "I make better food than the queen"
+  bio: "I make better food than the queen",
+  email: 'jess@mail.com',
+  password: 'chicken'
 )
 
 
@@ -60,7 +66,7 @@ r4 = Recipe.create!(
 )
 
 # r1.users << u1
-# r2.users << u3
+# r2.users << u3  
 # r3.users << u2
 # r4.users << u2
 
@@ -88,12 +94,12 @@ puts "created #{ Category.count } categories."
 print "creating recipe images ......"
 
 
-Recipe_image.destroy_all
+RecipeImage.destroy_all
 
-ri1 = Recipe_image.create! image_url:"http://fillmurray.com/300/300"
-ri2 = Recipe_image.create! image_url:"http://picsum.photos/200/300"
-ri3 = Recipe_image.create! image_url:"http://picsum.photos/200/300"
-ri4 = Recipe_image.create! image_url:"http://picsum.photos/200/300"
-ri5 = Recipe_image.create! image_url:"http://picsum.photos/200/300"
-ri6 = Recipe_image.create! image_url:"http://picsum.photos/200/300"
+ri1 = RecipeImage.create! image_url:"http://fillmurray.com/300/300"
+ri2 = RecipeImage.create! image_url:"http://picsum.photos/200/300"
+ri3 = RecipeImage.create! image_url:"http://picsum.photos/200/300"
+ri4 = RecipeImage.create! image_url:"http://picsum.photos/200/300"
+ri5 = RecipeImage.create! image_url:"http://picsum.photos/200/300"
+ri6 = RecipeImage.create! image_url:"http://picsum.photos/200/300"
 

@@ -1,0 +1,26 @@
+
+<%= form_with model: @recipe, local: true do |f| %>
+
+  <%= f.label :name%>
+  <br>
+  <%= f.text_field :name %>
+  <br>
+
+  <%= f.label :description%>
+  <br>
+  <%= f.text_field :description %>
+  <br>
+
+  <%= f.label :ingredients%>
+  <br>
+  <%= f.text_field :ingredients %>
+  <br>
+
+  <%= f.label :method%>
+  <br>
+  <%= f.text_field :method %>
+  <br>
+
+  <%= f. submit %>
+
+<% end %>
