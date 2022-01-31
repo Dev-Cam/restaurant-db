@@ -1,3 +1,13 @@
+<% if @recipe.errors.any?%>
+  <ul>
+    <% @recipe.errors.full_messages.each do |e|%>
+      <li>
+        <%= e %>  
+      </li>
+      <% end %>
+  </ul>
+<% end %>
+
 
 <%= form_with model: @recipe, local: true do |f| %>
 
@@ -13,12 +23,12 @@
 
   <%= f.label :ingredients%>
   <br>
-  <%= f.text_field :ingredients %>
+  <%= f.text_area :ingredients %>
   <br>
 
   <%= f.label :method%>
   <br>
-  <%= f.text_field :method %>
+  <%= f.text_area :method %>
   <br>
 
   <%= f. submit %>

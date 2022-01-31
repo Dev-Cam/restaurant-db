@@ -11,17 +11,31 @@
 
   <body>
   <div class="wrapper">
-  <h2>The Restaurant db </h2>
+  <h1>The Restaurant db </h1>
     <nav>
       
+  
       <div class="links">
+      <% if @current_user.present?%>
+        Welcome, <%= @current_user.name%>
+        |
+        <%= link_to 'Logout', login_path, method: 'delete' %>
+        |
+        <%= link_to 'Create Recipe', new_recipe_path %>
+        |
+      <% else %>
+        <%= link_to 'Login', login_path %>
+        |
+        <%= link_to 'Signup', '/does not exist yet' %>
+        |
+      <% end %>
         <%= link_to 'Home', root_path %> 
         |
         <%= link_to 'All Recipes', recipes_path %> 
         |
-        <%= link_to 'Login', '/does not exist yet' %>
-        |
-        <%= link_to 'Sign Up', '/does not exist yet' %>
+        <%= link_to 'All Users', users_path %> 
+        
+        
       </div>
       
     </nav>

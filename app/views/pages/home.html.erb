@@ -1,15 +1,21 @@
 
-<h2>Welcome to the recipe database!</h2>
+<h2> The Worlds Most Useful Useless Recipe database!</h2>
 <p>You will find a world of recipes from people around the globe</p>
+<br>
 
-<h3>All Recipes</h3>
+<h2>Welcome</h2>
+
+
+
+<h3>Trending Recipes</h3>
 
 <ul>
+
 <% @recipes.each do |recipe|%>
   <li>
-    <%= recipe.name %>
+  <%= link_to recipe.name, recipe_path(recipe.id) %>
     <br>
-    |
+    
     <%# recipe.user%>
     <%= recipe.description%>
   </li>

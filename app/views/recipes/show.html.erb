@@ -7,16 +7,19 @@
 
 <p>
   <strong>Description: </strong>
+  <br>
     <%= @recipe.description%>
   </p>
 <br>
 <p>
   <strong>Ingredients: </strong>
-    <%= @recipe.ingredients%>
+  <br>
+    <%= @recipe.ingredients.gsub "\n", "<br>"%>
   </p>
 <br>
 <p>
   <strong>Method: </strong>
-    <%= @recipe.method%>
+  <br>
+    <%= @recipe['method'].gsub "\n", "<br>"%>
   </p>
 <br>

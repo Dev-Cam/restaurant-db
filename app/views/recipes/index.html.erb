@@ -1,11 +1,13 @@
 <h1>The complete collection</h1>
 
-<%= link_to 'Add Recipe', new_recipe_path %>
 <div class="index_recipes">
 <ul>
 <% @recipes.each do |r|%>
   <li>
-    <%= link_to r.name, recipe_path(r.id) %>
+    <%= link_to r.name, recipe_path(r) %>
+    <% if @current_user.present? && recipe.user_id == @current_user.id %>
+      (<%= link_to 'Edit', edit_recipe_path(recipe.id) %>)
+    <% end %>
     <br>
   </li>
 <% end %>

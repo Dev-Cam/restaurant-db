@@ -1,12 +1,20 @@
 class RecipesController < ApplicationController
+  before_action :check_if_logged_in, except: [:index, :show]
   def new
     @recipe = Recipe.new
   end
 
   def create
-    recipe = Recipe.create recipe_params
-    recipe.save
-    redirect_to recipes_path
+    @recipe = Recipe.create recipe_params
+
+    @recipe.user_id = @current_user.id
+    @recipe.save
+    if @recipe.persisted?
+      redirect_to recipes_path
+    else
+      render :new
+    end
+    
   end
 
   def index
@@ -30,7 +38,7 @@ class RecipesController < ApplicationController
 
   def destroy
     Recipe.destroy params[:id]
-    redirect_to recipe_path
+    redirect_to recipes_path
   end
 
   private
