@@ -1,9 +1,20 @@
 <h2><%= @recipe.name %></h2>
 
-<%= link_to 'Edit', edit_recipe_path %>
-|
-<%= link_to 'Delete', recipe_path, method: 'delete' %>
+
+    <% if @current_user.present? && @recipe.user_id == @current_user.id %>
+       <%= link_to 'Edit', edit_recipe_path(@recipe.id) %>
+      <%= link_to 'Delete', recipe_path, method: 'delete' %>
+    <% end %>
 <br><br>
+
+<p>
+  <strong>Creator of recipe: </strong>
+  <br>
+    <%= @recipe.user.name %>
+  </p>
+<br>
+
+
 
 <p>
   <strong>Description: </strong>
@@ -11,15 +22,29 @@
     <%= @recipe.description%>
   </p>
 <br>
+
+<p>
+  <strong>Categories: </strong>
+  <br>
+  <% @recipe.categories.each do |cat|%>
+    <ul>
+      <li>
+        <%= cat.name %>
+      </li>
+    </ul>
+  <% end %>
+</p>
+<br>
+
 <p>
   <strong>Ingredients: </strong>
   <br>
-    <%= @recipe.ingredients.gsub "\n", "<br>"%>
-  </p>
+    <%= @recipe.ingredients.gsub("\n", "<br>").html_safe%>
+</p>
 <br>
 <p>
   <strong>Method: </strong>
   <br>
-    <%= @recipe['method'].gsub "\n", "<br>"%>
+    <%= @recipe['method'].gsub("\n", "<br>").html_safe%>
   </p>
 <br>

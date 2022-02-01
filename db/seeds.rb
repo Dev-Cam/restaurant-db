@@ -101,7 +101,10 @@ c5 = Category.create! name:"Lunch"
 c6 = Category.create! name:"Dinner"
 c7 = Category.create! name:"Basics"
 
-
+r1.categories << c4
+r2.categories << c7
+r3.categories << c3 << c7 << c4
+r4.categories << c1 << c2 << c3 << c4 << c7
 
 puts "created #{ Category.count } categories."
 
@@ -119,6 +122,10 @@ ri4 = RecipeImage.create! image_url:"http://picsum.photos/200/300"
 ri5 = RecipeImage.create! image_url:"http://picsum.photos/200/300"
 ri6 = RecipeImage.create! image_url:"http://picsum.photos/200/300"
 
+r1.recipe_images << ri1
+r2.recipe_images << ri2 << ri3
+r3.recipe_images << ri4 << ri5
+r4.recipe_images << ri6
 
 
 puts "created #{ RecipeImage.count } recipe images."

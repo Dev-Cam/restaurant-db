@@ -1,26 +1,24 @@
-
-<h2> The Worlds Most Useful Useless Recipe database!</h2>
-<p>You will find a world of recipes from people around the globe</p>
-<br>
-
-<h2>Welcome</h2>
+<div class="homepage_header">
+  <h2> The Worlds Most Useful Useless Recipe database!</h2>
+  <p>You will find a world of recipes from people around the globe</p>
+</div>
 
 
-
-<h3>Trending Recipes</h3>
+<div class="homepage-content">
+<h3>Trending Recipes:</h3>
 
 <ul>
 
 <% @recipes.each do |recipe|%>
-  <li>
+  <li class='homepage-links'>
   <%= link_to recipe.name, recipe_path(recipe.id) %>
     <br>
+   <p class='li-p'><%= recipe.description %></p> 
     
-    <%# recipe.user%>
-    <%= recipe.description%>
   </li>
-
-  <% end %>
+<% end %>
 </ul>
+</div>
+
 
 

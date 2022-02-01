@@ -1,13 +1,15 @@
 <h1>The complete collection</h1>
 
-<div class="index_recipes">
+<div >
 <ul>
 <% @recipes.each do |r|%>
-  <li>
+  <li class="index-recipes">
     <%= link_to r.name, recipe_path(r) %>
     <% if @current_user.present? && r.user_id == @current_user.id %>
       (<%= link_to 'Edit', edit_recipe_path(r.id) %>)
     <% end %>
+    <br>
+    <%= r.description%>
     <br>
   </li>
 <% end %>

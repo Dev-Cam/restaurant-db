@@ -1,0 +1,15 @@
+.users_index ul li {
+
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid #FC766AFF;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.users_index ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 20px;
+}

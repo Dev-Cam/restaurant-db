@@ -2,14 +2,18 @@ class RecipesController < ApplicationController
   before_action :check_if_logged_in, except: [:index, :show]
   def new
     @recipe = Recipe.new
+    @category = Category.all
   end
 
   def create
+  
     @recipe = Recipe.create recipe_params
 
     @recipe.user_id = @current_user.id
     @recipe.save
     if @recipe.persisted?
+      
+      @recipe.categories << Category.find(params[:categories][:ids])
       redirect_to recipes_path
     else
       render :new
@@ -18,7 +22,7 @@ class RecipesController < ApplicationController
   end
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.all.order :created_at
   end
 
   def show
@@ -33,6 +37,7 @@ class RecipesController < ApplicationController
   def update
     recipe = Recipe.find params[:id]
     recipe.update recipe_params
+    recipe.categories.clear
     redirect_to recipe_path(params[:id])
   end
 
