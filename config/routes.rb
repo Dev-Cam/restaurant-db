@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :recipes do 
+    resources :comments, only: [:create]
+  end
 
   root to: 'pages#home'
 
@@ -33,26 +36,27 @@ delete '/login' => 'session#destroy'
 
 
 
+
 #create ###############################################################
-get '/recipes/new' => 'recipes#new', as: 'new_recipe'
+# get '/recipes/new' => 'recipes#new', as: 'new_recipe'
 
-post '/recipes' => 'recipes#create'
+# post '/recipes' => 'recipes#create'
 
-#read##################################################################
-get '/recipes' => 'recipes#index'
-
-
-get '/recipes/:id' => 'recipes#show', as: 'recipe'
-
-#update################################################################
-
-get '/recipes/:id/edit' => 'recipes#edit', as: 'edit_recipe'
-
-patch '/recipes/:id' => 'recipes#update'
+# #read##################################################################
+# get '/recipes' => 'recipes#index'
 
 
-#DELETE##############################################################
+# get '/recipes/:id' => 'recipes#show', as: 'recipe'
 
-delete '/recipes/:id' => 'recipes#destroy'
+# #update################################################################
+
+# get '/recipes/:id/edit' => 'recipes#edit', as: 'edit_recipe'
+
+# patch '/recipes/:id' => 'recipes#update'
+
+
+# #DELETE##############################################################
+
+# delete '/recipes/:id' => 'recipes#destroy'
 
 end

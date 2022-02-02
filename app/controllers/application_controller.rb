@@ -1,6 +1,5 @@
 class ApplicationController < ActionController::Base
   before_action :fetch_user
-
   def fetch_user
 
     if session[:user_id].present?
