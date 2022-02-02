@@ -7,55 +7,58 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= cloudinary_js_config %>
   </head>
 
   <body>
-    <div class="header">
-      <div class="header-content">
-        <h1>The Restaurant db </h1>
-        <nav>
-          <div class="links">
-            
-          <% if @current_user.present?%>
-            <strong>Welcome, <%= @current_user.name%></strong>
-            |
-            <%= link_to 'Home', root_path %> 
-            |
-            <%= link_to 'All Recipes', recipes_path %> 
-            |
-            <%= link_to 'All Users', users_path %> 
-            |
-            <%= link_to 'Create Recipe', new_recipe_path %>
-            |
-            <%= link_to 'Logout', login_path, method: 'delete' %>
-            |
+    <div id="page-container">
+    <div id="content-wrap">
+      <div class="header">
+        <div class="header-content">
+          <h1>Not Quite a Food Blog </h1>
+          <nav>
+            <div class="links">
+              
+            <% if @current_user.present?%>
+              <strong>Welcome, <%= @current_user.name%></strong>
+              |
+              <%= link_to 'Home', root_path %> 
+              |
+              <%= link_to 'All Recipes', recipes_path %> 
+              |
+              <%= link_to 'All Users', users_path %> 
+              |
+              <%= link_to 'Create Recipe', new_recipe_path %>
+              |
+              <%= link_to 'Logout', login_path, method: 'delete' %>
+              |
 
-          <% else %>
-            <%= link_to 'Home', root_path %> 
-            |
-            <%= link_to 'All Recipes', recipes_path %> 
-            |
-            <%= link_to 'All Users', users_path %> 
-            |
-            <%= link_to 'Login', login_path %>
-            |
-            <%= link_to 'Signup', '/does not exist yet' %>
-            |
-          <% end %>
+            <% else %>
+              <%= link_to 'Home', root_path %> 
+              |
+              <%= link_to 'All Recipes', recipes_path %> 
+              |
+              <%= link_to 'All Users', users_path %> 
+              |
+              <%= link_to 'Login', login_path %>
+              |
+              <%= link_to 'Signup', new_user_path %>
+              |
+            <% end %>
 
-          </div>
-        </nav>
+            </div>
+          </nav>
+        </div>
       </div>
-    </div>
-    
+      
       <div class="content">
         <%= yield %>
       </div> 
- 
-
-  <footer>
-    &copy; Not Quite a Food Blog 2022
-  </footer>
-    
+  
+    </div>
+    <footer>
+      &copy; Not Quite a Food Blog 2022
+    </footer>
+    </div>  
   </body>
 </html>

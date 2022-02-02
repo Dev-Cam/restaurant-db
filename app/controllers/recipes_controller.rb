@@ -35,9 +35,15 @@ class RecipesController < ApplicationController
   end
 
   def update
-    recipe = Recipe.find params[:id]
-    recipe.update recipe_params
-    recipe.categories.clear
+    @recipe = Recipe.find params[:id]
+
+    if@recipe.user_id != @current_user.id
+      redirect_to login_path
+      return
+    end
+
+    @recipe.update recipe_params
+    # @recipe.categories.clear
     redirect_to recipe_path(params[:id])
   end
 

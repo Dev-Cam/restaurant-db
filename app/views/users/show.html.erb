@@ -1,7 +1,10 @@
 <div class="user_index">
+  <%= link_to 'Edit Profile', edit_user_path %>
+  
   <h2><%= @user.name %></h2>
 
-  <%= image_tag @user.image, alt: @user.name%>
+
+  <%= cl_image_tag @user.image, alt: @user.name, class: 'image'%>
   <br>
   <p>
     <strong>Bio:</strong>
