@@ -4,7 +4,7 @@
   <h2><%= @user.name %></h2>
 
 
-  <%= cl_image_tag @user.image, alt: @user.name, class: 'image'%>
+  <%= cl_image_tag @user.image, height: 200, width: 200, crop: 'fill', alt: @user.name %>
   <br>
   <p>
     <strong>Bio:</strong>
@@ -17,7 +17,16 @@
   </p>
   <br>
   <p>
-    <strong>My recipes:</strong>
+  <% if @user.recipes%>
+      <strong>My recipes:</strong>
+      <br>
+  
+      <%@user.recipes.each do |recipe| %>
+      <%= link_to recipe.name, recipe_path(recipe.id) %>
+      <br>
+      <% end %>
+    <% end %>
+    
     
     
   </p>

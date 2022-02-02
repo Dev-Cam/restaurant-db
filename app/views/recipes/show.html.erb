@@ -14,6 +14,12 @@
   </p>
 <br>
 
+<div class="recipe-images">
+<% @recipe.recipe_images.each do |image|%>
+      <%= image_tag image.image_url %>
+  <% end %>
+</div>
+  
 
 
 <p>

@@ -3,7 +3,7 @@
 <ul >
   <% @users.each do |u|%>
     <li>
-      <%= cl_image_tag u.image, alt: u.name, class: 'image'%>
+      <%= cl_image_tag u.image, height: 200, width: 200, crop: 'fill', alt: u.name%>
       <br>
       <%= link_to u.name, user_path(u.id) %>
     </li>
