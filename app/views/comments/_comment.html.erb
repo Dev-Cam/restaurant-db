@@ -1,10 +1,10 @@
 
 <article>
   <p><%= comment.content %></p>
-  <small>by <%= comment.user.name %></small>
+  <small>by: <%= link_to comment.user.name, user_path(comment.user.id) %></small>
 
   <% if @current_user.present? && comment.user_id == @current_user.id %>
-  <%= link_to 'Delete', [comment.recipe, comment], method: 'delete' %>
+  <%= link_to 'Delete', [comment.recipe, comment], method: 'delete' %> 
     <% end %>
 </article>
 <hr>

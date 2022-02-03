@@ -55,7 +55,7 @@
   </p>
 <br>
 
-<p>
+<p class="comment-section">
   <strong>Comments:</strong>
   <%= render @recipe.comments.includes(:user).order(id: :desc) %>
   <%= render partial: 'comments/form', locals: { recipe: @recipe }%>

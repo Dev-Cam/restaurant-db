@@ -93,3 +93,23 @@ ul {
 .li-p {
   margin-top: 3px;
 }
+
+article {
+  border: 2px solid black;
+  padding: 5px;
+}
+
+.comment-section {
+  text-decoration: underline;
+  margin-bottom: 10px;
+}
+
+small {
+  border-top: 1px solid grey;
+  margin-left: 10px;
+}
+
+small a {
+  text-decoration: none;
+
+}
