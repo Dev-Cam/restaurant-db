@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :recipes do 
-    resources :comments, only: [:create]
+    resources :comments, only: [:create, :destroy]
   end
 
   root to: 'pages#home'

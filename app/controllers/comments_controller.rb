@@ -11,6 +11,14 @@ class CommentsController < ApplicationController
     redirect_to recipe_path(params[:recipe_id])
   end
 
+  def destroy 
+    @recipe = Recipe.find params[:recipe_id]
+    @comment = @recipe.comments.find params[:id]
+    @comment.destroy
+    redirect_to recipe_path(params[:recipe_id])
+  end
+
+
   private
 
   def comment_params
