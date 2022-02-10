@@ -1,24 +1,14 @@
-# README
+# The Useless Useful Recipe Site
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A completely useless website of recipes that may give you a laugh. Create, edit and comment on recipes all from the security of being behind a screen. 
 
-Things you may want to cover:
+Play nicely though, there are no idiot sandwiches here.
 
-* Ruby version
+Find it here https://useless-useful-recipes.herokuapp.com/
 
-* System dependencies
+Tech stack: Ruby on Rails, CSS
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Wish list:
+1. A profile page button in the nav for users to easily access their profile
+2. like button on the recipe 
+3. ratings in the comments
